@@ -1,0 +1,11 @@
+{
+  "name": "Tanger-Med",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/oussamafilani/Tanger-Med.git",
+  "author": "Oussama Filani <42185573+filani07@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
