@@ -31,12 +31,12 @@
     "paths": {
       "@/controllers/*" : ["api/v1/controllers/*"],
       "@/helpers/*" : ["api/v1/helpers/*"],
-      "@/interfaces/*" : ["api/v1/interfaces/*"],
       "@/middlewares/*" : ["api/v1/middlewares/*"],
       "@/models/*" : ["api/v1/models/*"],
       "@/routes/*" : ["api/v1/routes/*"],
       "@/services/*" : ["api/v1/services/*"],
       "@/validations/*" : ["api/v1/validations/*"],
+      "@/interfaces/*" : ["interfaces/*"],
       "@/config/*" : ["config/*"],
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
