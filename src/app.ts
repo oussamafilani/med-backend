@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import 'dotenv/config';
 
+import connect from '@/config/db';
+
 class App {
     public express: Application;
     public port: number;
@@ -13,6 +15,7 @@ class App {
         this.port = port;
 
         this.initialiseMiddleware();
+        this.initialiseDatabaseConnection();
     }
 
     private initialiseMiddleware(): void {
@@ -27,6 +30,10 @@ class App {
         this.express.listen(this.port, () => {
             console.log(`App listening on  http://localhost:${this.port}`);
         });
+    }
+
+    private initialiseDatabaseConnection(): void {
+        connect();
     }
 }
 
