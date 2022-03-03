@@ -3,7 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import 'dotenv/config';
-
+import v1 from '@/routes/index';
 import connect from '@/config/db';
 
 class App {
@@ -16,11 +16,12 @@ class App {
 
         this.initialiseMiddleware();
         this.initialiseDatabaseConnection();
+        this.initialApiRouteVersioning();
     }
 
     private initialiseMiddleware(): void {
-        this.express.use(helmet());
         this.express.use(cors());
+        this.express.use(helmet());
         this.express.use(morgan('dev'));
         this.express.use(express.json());
         this.express.use(express.urlencoded({ extended: false }));
@@ -34,6 +35,10 @@ class App {
 
     private initialiseDatabaseConnection(): void {
         connect();
+    }
+
+    private initialApiRouteVersioning(): void {
+        this.express.use('/api/v1/', v1);
     }
 }
 
