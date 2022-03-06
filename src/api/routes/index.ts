@@ -2,10 +2,8 @@ import { Router } from 'express';
 
 const router = Router();
 
-import User from '@/routes/user.route';
-import Container from '@/routes/container.route';
+import apiRouter from './apiRouter';
 
-router.use('/users', User);
-router.use('/Container', Container);
+router.use('/api/v1', apiRouter);
 
 export default router;

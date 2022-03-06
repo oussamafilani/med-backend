@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
+import 'dotenv/config';
 
 import logger from '@/logger/index';
 
 function connect(): Promise<void> {
     return mongoose
-        .connect('mongodb://localhost:27017/tanger_med')
+        .connect(process.env.MONGO_PATH as string)
         .then(() => {
             logger.log('info', 'Database connected');
         })

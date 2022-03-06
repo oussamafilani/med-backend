@@ -2,8 +2,9 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
 import 'dotenv/config';
-import v1 from '@/routes/index';
+import route from '@/routes/index';
 import connect from '@/config/db';
 
 import logger from '@/logger/index';
@@ -24,6 +25,7 @@ class App {
         this.express.use(cors());
         this.express.use(helmet());
         this.express.use(morgan('dev'));
+        this.express.use(mongoSanitize());
         this.express.use(express.json());
         this.express.use(express.urlencoded({ extended: false }));
     }
@@ -42,7 +44,7 @@ class App {
     }
 
     private initialApiRouteVersioning(): void {
-        this.express.use('/api/v1/', v1);
+        this.express.use('/', route);
     }
 }
 

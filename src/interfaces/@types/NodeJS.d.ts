@@ -2,6 +2,7 @@ declare global {
     declare namespace NodeJs {
         interface ProcessEnv {
             PORT?: number;
+            MONGO_PATH: string;
         }
     }
 }
