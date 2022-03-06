@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+
+import logger from '../logger/logger';
+
 // import config from 'config';
 
 function connect(): Promise<void> {
@@ -7,10 +10,10 @@ function connect(): Promise<void> {
     return mongoose
         .connect('mongodb://localhost:27017/tanger_med')
         .then(() => {
-            console.info('Database connected');
+            logger.log('info', 'Database connected');
         })
         .catch((error) => {
-            console.error('db error', error);
+            logger.log('info', 'db error', error);
             process.exit(1);
         });
 }

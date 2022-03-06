@@ -6,6 +6,7 @@ import 'dotenv/config';
 import v1 from '@/routes/index';
 import connect from '@/config/db';
 
+import logger from './logger/logger';
 class App {
     public express: Application;
     public port: number;
@@ -29,7 +30,10 @@ class App {
 
     public listen(): void {
         this.express.listen(this.port, () => {
-            console.log(`App listening on  http://localhost:${this.port}`);
+            logger.log(
+                'info',
+                `App listening on  http://localhost:${this.port}`
+            );
         });
     }
 
