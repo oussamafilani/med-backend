@@ -1,12 +1,8 @@
 import mongoose from 'mongoose';
 
-import logger from '../logger/logger';
-
-// import config from 'config';
+import logger from '@/logger/index';
 
 function connect(): Promise<void> {
-    // const dbUri = config.get('dbUri') as string;
-
     return mongoose
         .connect('mongodb://localhost:27017/tanger_med')
         .then(() => {

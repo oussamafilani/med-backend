@@ -6,7 +6,7 @@ import 'dotenv/config';
 import v1 from '@/routes/index';
 import connect from '@/config/db';
 
-import logger from './logger/logger';
+import logger from '@/logger/index';
 class App {
     public express: Application;
     public port: number;
