@@ -29,13 +29,13 @@
     "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./src",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
-      "@/controllers/*" : ["api/v1/controllers/*"],
-      "@/helpers/*" : ["api/v1/helpers/*"],
-      "@/middlewares/*" : ["api/v1/middlewares/*"],
-      "@/models/*" : ["api/v1/models/*"],
-      "@/routes/*" : ["api/v1/routes/*"],
-      "@/services/*" : ["api/v1/services/*"],
-      "@/validations/*" : ["api/v1/validations/*"],
+      "@/controllers/*" : ["api/controllers/*"],
+      "@/helpers/*" : ["api/helpers/*"],
+      "@/middlewares/*" : ["api/middlewares/*"],
+      "@/models/*" : ["api/models/*"],
+      "@/routes/*" : ["api/routes/*"],
+      "@/services/*" : ["api/services/*"],
+      "@/validations/*" : ["api/validations/*"],
       "@/interfaces/*" : ["interfaces/*"],
       "@/config/*" : ["config/*"],
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
