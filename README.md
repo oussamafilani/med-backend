@@ -1,4 +1,4 @@
-The idea of the project is to manage the appointments of the Quays with the whole port system (container, docker, warehouse, block, bay...), this branch contains a back-end part, you will find the API documentation below.
+The idea of the project is a Supply Chain Management System for a Maritime Port (container, docker, warehouse, block, bay...), this branch contains a back-end part, you will find the API documentation below.
 
 Don't forget to click the star and follow buttons to encourage us to build something amazing🌟
 
