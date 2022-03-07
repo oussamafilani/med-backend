@@ -4,6 +4,7 @@ declare global {
             PORT: number;
             MONGO_PATH: string;
             NODE_ENV: 'development' | 'production';
+            ACCESS_TOKEN_SECRET: string;
         }
     }
 }

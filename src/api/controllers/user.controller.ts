@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { get } from 'lodash';
-
+import { hashPsw } from '@/helpers/hashPsw';
 import {
     createUser,
     findUser,
@@ -10,17 +10,22 @@ import {
 } from '@/services/user.service';
 
 export async function getAllUserHandler(req: Request, res: Response) {
-    // const body = req.body;
-
     const user = await getAllUser();
 
     return res.send(user);
 }
 
 export async function createUserHandler(req: Request, res: Response) {
-    const body = req.body;
+    const { fullname, email, password, role } = req.body;
 
-    const user = await createUser(body);
+    const hasdPsw = hashPsw(password);
+
+    const user = await createUser({
+        fullname,
+        email,
+        password: hasdPsw,
+        role,
+    });
 
     return res.send(user);
 }
