@@ -4,6 +4,9 @@ const router = Router();
 import Auth from '@/routes/auth.route';
 import User from '@/routes/user.route';
 import Container from '@/routes/container.route';
+import Supplier from '@/routes/supplier.route';
+import Ship from '@/routes/ship.route';
+import Quay from '@/routes/quay.route';
 
 router.get('/', (req: Request, res: Response) => {
     res.json({
@@ -13,6 +16,9 @@ router.get('/', (req: Request, res: Response) => {
 
 router.use('/auth', Auth);
 router.use('/users', User);
-router.use('/Container', Container);
+router.use('/containers', Container);
+router.use('/suppliers', Supplier);
+router.use('/ships', Ship);
+router.use('/quays', Quay);
 
 export default router;

@@ -5,7 +5,7 @@ import { ShipDocument } from '@/interfaces/ship.interface';
 
 // 2. Create a Schema corresponding to the document interface.
 const schema = new Schema<ShipDocument>({
-    reference: { type: String, required: true },
+    reference: { type: String, required: true, unique: true },
     nationality: String,
     tonnage: Number,
 });

@@ -5,7 +5,7 @@ import { QuayDocument } from '@/interfaces/quay.interface';
 
 // 2. Create a Schema corresponding to the document interface.
 const schema = new Schema<QuayDocument>({
-    reference: { type: String, required: true },
+    reference: { type: String, required: true, unique: true },
     status: Boolean,
 });
 
