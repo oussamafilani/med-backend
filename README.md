@@ -15,16 +15,12 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm install
-  or
   yarn install
 ```
 
 Start the server
 
 ```bash
-  npm run dev
-  or
   yarn dev
 
 ```
