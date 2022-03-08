@@ -18,7 +18,7 @@ export async function getAllUserHandler(req: Request, res: Response) {
 export async function createUserHandler(req: Request, res: Response) {
     const { fullname, email, password, role } = req.body;
 
-    const hasdPsw = hashPsw(password);
+    const hasdPsw = await hashPsw(password);
 
     const user = await createUser({
         fullname,
