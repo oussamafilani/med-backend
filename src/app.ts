@@ -1,4 +1,6 @@
 import express, { Application } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
+
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
@@ -45,6 +47,16 @@ class App {
 
     private initialApiRouteVersioning(): void {
         this.express.use('/', route);
+
+        // handle undefined Routes
+        this.express.use(
+            '*',
+            (req: Request, res: Response, next: NextFunction) => {
+                // const err: any = new AppError(404, 'fail', 'undefined route');
+                // next(err, req, res, next);
+                res.status(401).send('undefined route');
+            }
+        );
     }
 }
 
